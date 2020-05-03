@@ -62,4 +62,4 @@ generation of multiple kings and knights, particularly useful in evaluation of a
 functions, although slower than their single-piece attack mask generator brothers, are still very fast.
 
 # Reference
-See (M42.pdf)[].
+See (M42.pdf)[https://sites.google.com/site/sydfhd/projects/m42/M42.pdf?attredirects=0&d=1].
