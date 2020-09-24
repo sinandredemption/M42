@@ -3,7 +3,7 @@ C++ Library for Bitboard Attack Mask Generation
 
 **Introduction**
 ---
-M42 is a small library for Bitboard Attack Mask Generation. It is intended to be used by beginner/novice chess programmers. The purpose of this library is to provide the fastest attack mask generation methods available to chess programming amateurs, and to a save time and energy on coding and understanding those methods.
+M42 is a small library for Bitboard Attack Mask Generation using Magic Bitboards. It is intended to be used by beginner/novice chess programmers. The purpose of this library is to provide the fastest attack mask generation methods available to chess programming amateurs, and to a save time and energy on coding and understanding those methods.
 
 **Getting Started**
 ---
