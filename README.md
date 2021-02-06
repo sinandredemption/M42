@@ -3,7 +3,7 @@ C++ Library for Bitboard Attack Mask Generation
 
 **Introduction**
 ---
-M42 is a small library for Bitboard Attack Mask Generation using Magic Bitboards. It is intended to be used by beginner/novice chess programmers. The purpose of this library is to provide the fastest attack mask generation methods available to chess programming amateurs, and to a save time and energy on coding and understanding those methods.
+M42 is a small library for Bitboard Attack Mask Generation using Magic Bitboards. It is intended to be used by beginner/novice chess programmers. The purpose of this library is to provide the fastest attack mask generation methods available to chess programming amateurs, and to a save time and energy on coding and understanding those methods. To quickly get started, see file "example.cpp"
 
 **Getting Started**
 ---
@@ -12,18 +12,18 @@ compile “m42.cpp” along with the source files of your program. No DLLs, no f
 libraries, no special command lines. You also need to call ```M42::init()``` in the main function of
 your program.
 
-**SUPPORTED COMPILERS**
----
-M42 is intended to be used under a variety of C++ compilers on a variety of system. M42 has been
-tested on g++ and Visual C++ compilers. M42 should compile fine under pretty much every C++
-compiler, and if it doesn’t, you can of course email your issues (see the cover page).
-
 **Quickstart - see example.cpp**
 ---
 A file by the name “example.cpp” is included to demonstrate the usage and some functions of M42
 library. You don’t need to set any special command line options to compile it. Just compile it like
 any other source file. For example, under g++, use the command line “g++ m42.cpp example.cpp –o
 m42” and then run the compiled program by “./m42”.
+
+**SUPPORTED COMPILERS**
+---
+M42 is intended to be used under a variety of C++ compilers on a variety of system. M42 has been
+tested on g++ and Visual C++ compilers. M42 should compile fine under pretty much every C++
+compiler, and if it doesn’t, you can of course email your issues (see the cover page).
 
 # Functions provided by M42 library
 
