@@ -9,8 +9,7 @@ M42 is a small library for Bitboard Attack Mask Generation using Magic Bitboards
 ---
 Using M42 library is as simple as it can be, just include the header file (```#include “m42.h”```) and
 compile “m42.cpp” along with the source files of your program. No DLLs, no fancy precompiled
-libraries, no special command lines. You also need to call ```M42::init()``` in the main function of
-your program.
+libraries, no special command lines. **You also need to call ```M42::init()``` before using this library (preferably in the main function of your program).**
 
 **Quickstart - see example.cpp**
 ---
