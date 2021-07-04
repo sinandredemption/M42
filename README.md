@@ -60,5 +60,7 @@ of kings>)``` and ```M42::calc_knight_attacks(<bitboard of knights>)``` for atta
 generation of multiple kings and knights, particularly useful in evaluation of attacks. These
 functions, although slower than their single-piece attack mask generator brothers, are still very fast.
 
+# Support for hardware instructions
+If you have a 64-bit system, and are using either MSVC or g++ as your compiler, M42 can benefit from using hardware instructions. To enable usage of hardware instructions, define `USE_INTRIN` either as a compiler option (e.g. `g++ -D USE_INTRIN`) or by manually coding `#define USE_INTRIN` before including `m42.h`.
 # Reference
 See [M42.pdf](https://sites.google.com/site/sydfhd/projects/m42/M42.pdf?attredirects=0&d=1).
