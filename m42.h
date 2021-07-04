@@ -6,14 +6,9 @@
  * your program, to use this library.
  * Read the documentation to know what every function does.
  *
- * Copyright: NO COPYRIGHT. Yeah, that's right, I give away all the
- * copyrights of this library. So you can use this code and/or modify as
- * you like. You're free to do whatever you want, though I'd appreciate
- * if you'd mention the library name and source in case you use this
- * library.
- *
- * My email: sydfhd at gmail dot com. Do drop me a line in case you
- * improve this library, or add more functions to it.
+ * Developer contact: sydfhd at gmail dot com
+ * 
+ * License: MIT License (see https://mit-license.org/)
  */
 
 #ifndef INC_M42_H_
@@ -22,6 +17,12 @@
 #include <cassert>
 #include <cstdlib>
 #include <cstring>
+
+#ifdef USE_INTRIN
+#ifdef _MSC_VER
+#include <intrin.h>
+#endif
+#endif
 
 namespace M42 {
   extern uint64_t KnightAttacks[64];
@@ -118,6 +119,18 @@ namespace M42 {
 
   inline int msb(uint64_t b)
   {
+#if __cplusplus > 201703L
+    return std::bit_width(b) - 1;
+#elif defined(USE_INTRIN)
+#if defined(_MSC_VER)
+    unsigned long idx;
+    _BitScanReverse64(&idx, b);
+    return (int)idx;
+#elif defined(__GNUC__)
+    return 63 - __builtin_clzll(b);
+#endif  // _MSC_VER
+#endif  // __cplusplus
+
     const int BitScanTable[64] = {
       0, 47,  1, 56, 48, 27,  2, 60,
       57, 49, 41, 37, 28, 16,  3, 61,
@@ -135,12 +148,16 @@ namespace M42 {
   inline uint64_t byteswap(uint64_t b)
   {
 #ifdef USE_INTRIN
+#if defined(_MSC_VER)
     return _byteswap_uint64(b);
+#elif defined(__GNUC__)
+    return __builtin_bswap64(b);
 #else
     b = ((b >> 8) & 0x00FF00FF00FF00FFULL) | ((b & 0x00FF00FF00FF00FFULL) << 8);
     b = ((b >> 16) & 0x0000FFFF0000FFFFULL) | ((b & 0x0000FFFF0000FFFFULL) << 16);
     return (b >> 32) | (b << 32);
 #endif
+#endif // USE_INTRIN
   }
 
   inline uint64_t king_attacks(int sq) {

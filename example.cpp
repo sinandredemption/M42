@@ -32,7 +32,7 @@ uint64_t rand64()
 }
 
 void pause() {
-  cout << "Press enter to continue...";
+  cout << "(Press enter to continue...)";
   cin.get();
 }
 
@@ -93,7 +93,7 @@ int main() {
     pause();
   }
 
-  cout << "Now read the documentation to know about more function offered by the library.\n";
+  cout << "Please do read the documentation to know about more function offered by the library.\n";
   cout << "Have a nice day!\n";
   pause();
 
