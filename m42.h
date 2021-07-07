@@ -119,6 +119,7 @@ namespace M42 {
 
   inline int msb(uint64_t b)
   {
+    b |= 1;
 #if __cplusplus > 201703L
     return std::bit_width(b) - 1;
 #elif defined(USE_INTRIN)
@@ -152,12 +153,12 @@ namespace M42 {
     return _byteswap_uint64(b);
 #elif defined(__GNUC__)
     return __builtin_bswap64(b);
-#else
+#endif
+#endif // USE_INTRIN
+
     b = ((b >> 8) & 0x00FF00FF00FF00FFULL) | ((b & 0x00FF00FF00FF00FFULL) << 8);
     b = ((b >> 16) & 0x0000FFFF0000FFFFULL) | ((b & 0x0000FFFF0000FFFFULL) << 16);
     return (b >> 32) | (b << 32);
-#endif
-#endif // USE_INTRIN
   }
 
   inline uint64_t king_attacks(int sq) {

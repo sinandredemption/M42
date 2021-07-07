@@ -1,0 +1,11 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/x64/Debug
+/a.out
+/.vs
+/M42.sln
+/M42.vcxproj
+/M42.vcxproj.user
+/M42.vcxproj.filters
