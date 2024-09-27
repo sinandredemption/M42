@@ -120,7 +120,7 @@ namespace M42 {
   inline int msb(uint64_t b)
   {
     b |= 1;
-#if __cplusplus > 201703L
+#if __cplusplus > 201703L || !defined(__APPLE__)
     return std::bit_width(b) - 1;
 #elif defined(USE_INTRIN)
 #if defined(_MSC_VER)
