@@ -18,6 +18,10 @@
 #include <cstdlib>
 #include <cstring>
 
+#if __cplusplus > 201703L
+#include <bit>
+#endif
+
 #ifdef USE_INTRIN
 #ifdef _MSC_VER
 #include <intrin.h>
@@ -120,7 +124,7 @@ namespace M42 {
   inline int msb(uint64_t b)
   {
     b |= 1;
-#if __cplusplus > 201703L && !defined(__APPLE__)
+#if __cplusplus > 201703L
     return std::bit_width(b) - 1;
 #elif defined(USE_INTRIN)
 #if defined(_MSC_VER)
