@@ -18,6 +18,10 @@
 #include <cstdlib>
 #include <cstring>
 
+#if __cplusplus > 201703L
+#include <bit>
+#endif
+
 #ifdef USE_INTRIN
 #ifdef _MSC_VER
 #include <intrin.h>
